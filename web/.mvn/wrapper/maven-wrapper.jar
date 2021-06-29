@@ -1,0 +1,925 @@
+ <policy name="NoQuickTabs" class="Both" displayName="$(string.NoQuickTabs)" explainText="$(string.IE_ExplainNoQuickTabs)" key="Software\Policies\Microsoft\Internet Explorer\TabbedBrowsing" valueName="QuickTabsThreshold">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7_10" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+    </policy>
+    <policy name="NoSearchProvider" class="Both" displayName="$(string.NoSearchProvider)" explainText="$(string.IE_ExplainNoSearchProvider)" key="Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions" valueName="NoChangeDefaultSearchProvider">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="NoSplash" class="Machine" displayName="$(string.NoSplash)" explainText="$(string.IE_ExplainNoSplash)" key="Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions" valueName="NoSplash">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5ONLY" />
+    </policy>
+    <policy name="NoTabBrowsing_1" class="Both" displayName="$(string.NoTabBrowsing)" explainText="$(string.IE_ExplainNoTabBrowsing)" key="Software\Policies\Microsoft\Internet Explorer\TabbedBrowsing" valueName="Enabled">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7_10" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="NoTabBrowsingPopups" class="Both" displayName="$(string.NoTabBrowsingPopups)" explainText="$(string.IE_ExplainNoTabBrowsingPopups)" presentation="$(presentation.NoTabBrowsingPopups_1)" key="Software\Policies\Microsoft\Internet Explorer\TabbedBrowsing">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="PopUpList" valueName="PopupsUseNewWindow" required="true">
+          <item displayName="$(string.IEDecide)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceNewWindow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceNewTab)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="NoUpdateCheck" class="Machine" displayName="$(string.NoUpdateCheck)" explainText="$(string.IE_ExplainNoUpdateCheck)" key="Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions" valueName="NoUpdateCheck">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_6" />
+    </policy>
+    <policy name="NoWindowReuse" class="Both" displayName="$(string.NoWindowReuse)" explainText="$(string.IE_ExplainNoWindowReuse)" presentation="$(presentation.NoWindowReuse_1)" key="Software\Policies\Microsoft\Internet Explorer\Main">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="SelectWindowReuse" valueName="AllowWindowReuse" required="true">
+          <item displayName="$(string.Existing)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.New)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OESettings" class="User" displayName="$(string.OESettings)" explainText="$(string.IE_ExplainOEVirusProtection)" presentation="$(presentation.OESettings)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE6ONLY" />
+      <elements>
+        <boolean id="OEVirus" key="Software\Microsoft\Outlook Express" valueName="BlockExeAttachments">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="PopupBlocker_AllowList" class="Both" displayName="$(string.PopupBlocker_AllowList)" explainText="$(string.ExplainPopupBlocker_AllowList)" presentation="$(presentation.PopupBlocker_AllowList_1)" key="Software\Policies\Microsoft\Internet Explorer\New Windows" valueName="ListBox_Support_Allow">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE6SP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <list id="PopupBlocker_AllowListPrompt" key="Software\Policies\Microsoft\Internet Explorer\New Windows\Allow" additive="true" />
+      </elements>
+    </policy>
+    <policy name="RestrictAccessibility" class="User" displayName="$(string.RestrictAccessibility)" explainText="$(string.IE_ExplainRestrictAccessibility)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Accessibility">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictAutoconfig" class="Both" displayName="$(string.RestrictAutoconfig)" explainText="$(string.IE_ExplainRestrictAutoconfig)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Autoconfig">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictCache" class="User" displayName="$(string.RestrictCache)" explainText="$(string.IE_ExplainRestrictCache)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Cache">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictCalendarContact" class="User" displayName="$(string.RestrictCalendarContact)" explainText="$(string.IE_ExplainRestrictCalendarContact)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="CalendarContact">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_NONVISTA" />
+    </policy>
+    <policy name="RestrictCertificates" class="User" displayName="$(string.RestrictCertificates)" explainText="$(string.IE_ExplainRestrictCertificates)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Certificates">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictCheckBrowser" class="User" displayName="$(string.RestrictCheckBrowser)" explainText="$(string.IE_ExplainRestrictCheckBrowser)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Check_If_Default">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_9" />
+    </policy>
+    <policy name="NotifyNotDefaultBrowser" class="User" displayName="$(string.NotifyNotDefaultBrowser)" explainText="$(string.IE_ExplainNotifyNotDefaultBrowser)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="Check_Associations">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE10" />
+      <enabledValue>
+        <string>yes</string>
+      </enabledValue>
+      <disabledValue>
+        <string>no</string>
+      </disabledValue>
+    </policy>
+    <policy name="RestrictColors" class="User" displayName="$(string.RestrictColors)" explainText="$(string.IE_ExplainRestrictColors)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Colors">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictConnectionSettings_1" class="User" displayName="$(string.RestrictConnectionSettings)" explainText="$(string.IE_ExplainRestrictConnectionSettings)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Connection Settings">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictConnectionSettings_2" class="Machine" displayName="$(string.RestrictConnectionSettings)" explainText="$(string.IE_ExplainRestrictConnectionSettings)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+      <enabledList>
+        <item key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Connection Settings">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Connwiz Admin Lock">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+    </policy>
+    <policy name="RestrictConnectionWizard" class="User" displayName="$(string.RestrictConnectionWizard)" explainText="$(string.IE_ExplainRestrictConnectionWizard)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Connwiz Admin Lock">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictFonts" class="User" displayName="$(string.RestrictFonts)" explainText="$(string.IE_ExplainRestrictFonts)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Fonts">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictFormSuggest" class="User" displayName="$(string.RestrictFormSuggest)" explainText="$(string.IE_ExplainRestrictFormSuggest)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="Use FormSuggest">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+      <enabledValue>
+        <string>no</string>
+      </enabledValue>
+      <disabledValue>
+        <string>yes</string>
+      </disabledValue>
+      <enabledList>
+        <item key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="FormSuggest">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <disabledList>
+        <item key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="FormSuggest">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </disabledList>
+    </policy>
+    <policy name="RestrictFormSuggestPW" class="User" displayName="$(string.RestrictFormSuggestPW)" explainText="$(string.IE_ExplainRestrictFormSuggestPW)" presentation="$(presentation.RestrictFormSuggestPW)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="FormSuggest Passwords">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+      <enabledValue>
+        <string>yes</string>
+      </enabledValue>
+      <disabledValue>
+        <string>no</string>
+      </disabledValue>
+      <enabledList>
+        <item key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="FormSuggest Passwords">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <disabledList>
+        <item key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="FormSuggest Passwords">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </disabledList>
+      <elements>
+        <boolean id="ChkBox_PasswordAsk" valueName="FormSuggest PW Ask">
+          <trueValue>
+            <string>yes</string>
+          </trueValue>
+          <falseValue>
+            <string>no</string>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="RestrictHistory" class="Both" displayName="$(string.RestrictHistory)" explainText="$(string.IE_ExplainRestrictHistory)" presentation="$(presentation.RestrictHistory_1)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="History">
+      <parentCategory ref="DeleteBrowsingHistory" />
+      <supportedOn ref="SUPPORTED_IE5" />
+      <elements>
+        <decimal id="DaysToKeep_Prompt" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Url History" valueName="DaysToKeep" required="true" maxValue="999" />
+      </elements>
+    </policy>
+    <policy name="RestrictHomePage" class="User" displayName="$(string.RestrictHomePage)" explainText="$(string.IE_ExplainRestrictHomePage)" presentation="$(presentation.RestrictHomePage)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="HomePage">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+      <elements>
+        <text id="EnterHomePagePrompt" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="Start Page" required="true" />
+      </elements>
+    </policy>
+    <policy name="SecondaryHomePages" class="Both" displayName="$(string.SecondaryHomePages)" explainText="$(string.IE_ExplainSecondaryHomePages)" presentation="$(presentation.SecondaryHomePages)" key="Software\Policies\Microsoft\Internet Explorer\Main\SecondaryStartPages">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <list id="SecondaryHomePagesList" additive="true" />
+      </elements>
+    </policy>
+    <policy name="RestrictLanguages" class="User" displayName="$(string.RestrictLanguages)" explainText="$(string.IE_ExplainRestrictLanguages)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Languages">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictLinks" class="User" displayName="$(string.RestrictLinks)" explainText="$(string.IE_ExplainRestrictLinks)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="links">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictMessaging" class="User" displayName="$(string.RestrictMessaging)" explainText="$(string.IE_ExplainRestrictMessaging)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Messaging">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_NONVISTA" />
+    </policy>
+    <policy name="RestrictPopupExceptionList" class="Both" displayName="$(string.RestrictPopupExceptionList)" explainText="$(string.IE_ExplainRestrictPopupExceptionList)" key="Software\Policies\Microsoft\Internet Explorer\Restrictions" valueName="RestrictPopupExceptionList">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+    </policy>
+    <policy name="RestrictPopupManagement" class="Both" displayName="$(string.RestrictPopupManagement)" explainText="$(string.IE_ExplainRestrictPopupManagement)" key="Software\Policies\Microsoft\Internet Explorer\Restrictions" valueName="NoPopupManagement">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE6SP2" />
+    </policy>
+    <policy name="RestrictProfiles" class="User" displayName="$(string.RestrictProfiles)" explainText="$(string.IE_ExplainRestrictProfiles)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Profiles">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_6" />
+    </policy>
+    <policy name="RestrictProxy" class="Both" displayName="$(string.RestrictProxy)" explainText="$(string.IE_ExplainRestrictProxy)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Proxy">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictRatings" class="User" displayName="$(string.RestrictRatings)" explainText="$(string.IE_ExplainRestrictRatings)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Ratings">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="RestrictResetWebSettings" class="User" displayName="$(string.RestrictResetWebSettings)" explainText="$(string.IE_ExplainRestrictResetWebSettings)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="ResetWebSettings">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_6" />
+    </policy>
+    <policy name="RestrictSettings" class="Both" displayName="$(string.RestrictSettings)" explainText="$(string.IE_ExplainRestrictSettings)" key="Software\Policies\Microsoft\Internet Explorer\Control Panel" valueName="Settings">
+      <parentCategory ref="DeleteBrowsingHistory" />
+      <supportedOn ref="SUPPORTED_IE5_7" />
+    </policy>
+    <policy name="RestrictWebAddressSuggest" class="Both" displayName="$(string.RestrictWebAddressSuggest)" explainText="$(string.IE_ExplainRestrictWebAddressSuggest)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete" valueName="AutoSuggest">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+      <enabledValue>
+        <string>no</string>
+      </enabledValue>
+      <disabledValue>
+        <string>yes</string>
+      </disabledValue>
+    </policy>
+    <policy name="RestrictWSAutoComplete" class="Both" displayName="$(string.RestrictWSAutoComplete)" explainText="$(string.IE_ExplainRestrictWSAutoComplete)" key="Software\Policies\Microsoft\Internet Explorer\Main\WindowsSearch" valueName="EnabledScopes">
+      <parentCategory ref="AutoCompleteCat" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="5" />
+      </disabledValue>
+    </policy>
+    <policy name="RestrictDomainSuggestion" class="Both" displayName="$(string.RestrictDomainSuggestion)" explainText="$(string.IE_ExplainRestrictDomainSuggestion)" key="Software\Policies\Microsoft\Internet Explorer\DomainSuggestion" valueName="Enabled">
+      <parentCategory ref="AutoCompleteCat" />
+      <supportedOn ref="SUPPORTED_IE10" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="Search_NoFindFiles" class="User" displayName="$(string.Search_NoFindFiles)" explainText="$(string.IE_ExplainSearch_NoFindFiles)" key="Software\Policies\Microsoft\Internet Explorer\Restrictions" valueName="NoFindFiles">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_6" />
+    </policy>
+    <policy name="Search_NoSearchCustomization" class="User" displayName="$(string.Search_NoSearchCustomization)" explainText="$(string.IE_ExplainNoSearchCustomization)" key="Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions" valueName="NoSearchCustomization">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_6" />
+    </policy>
+    <policy name="Security_HKLM_only" class="Machine" displayName="$(string.Security_HKLM_only)" explainText="$(string.IE_ExplainSecurity_HKLM_only)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings" valueName="Security_HKLM_only">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="Security_options_edit" class="Machine" displayName="$(string.Security_options_edit)" explainText="$(string.IE_ExplainSecurity_options_edit)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings" valueName="Security_options_edit">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="Security_zones_map_edit" class="Machine" displayName="$(string.Security_zones_map_edit)" explainText="$(string.IE_ExplainSecurity_zones_map_edit)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings" valueName="Security_zones_map_edit">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+    </policy>
+    <policy name="ShellNotifications" class="Machine" displayName="$(string.ShellNotifications)" explainText="$(string.IE_ExplainShellNotifications)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoMSAppLogo5ChannelNotify">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5_6" />
+    </policy>
+    <policy name="SpecificSearchProvider" class="Both" displayName="$(string.SpecificSearchProvider)" explainText="$(string.IE_ExplainSpecificSearchProvider)" key="Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions" valueName="UsePolicySearchProvidersOnly">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SQM_DisableCEIP" class="Both" displayName="$(string.SQM_DisableCEIP)" explainText="$(string.IE_ExplainSQM_DisableCEIP)" key="Software\Policies\Microsoft\Internet Explorer\SQM" valueName="DisableCustomerImprovementProgram">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7_NONVISTA" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="TabOpenInFgndBgnd" class="Both" displayName="$(string.TabOpenInFgndBgnd)" explainText="$(string.IE_ExplainTabOpenInFgBg)" presentation="$(presentation.TabOpenInFgndBgnd_1)" key="Software\Policies\Microsoft\Internet Explorer\TabbedBrowsing">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="ForeGndBackGnd" valueName="OpenInForeground" required="true">
+          <item displayName="$(string.Foreground)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.Background)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="UserProxy" class="Machine" displayName="$(string.UserProxy)" explainText="$(string.IE_ExplainUserProxy)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings" valueName="ProxySettingsPerUser">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE5" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="IZ_Policy_AddressStatusBar_1" class="Both" displayName="$(string.IZ_Policy_AddressStatusBar)" explainText="$(string.IZ_Policy_AddressStatusBar_Explain)" presentation="$(presentation.IZ_Policy_AddressStatusBar_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname2104" valueName="2104" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_AllowDynsrcPlayback_1" class="Both" displayName="$(string.IZ_Policy_AllowDynsrcPlayback)" explainText="$(string.IZ_Policy_AllowDynsrcPlayback_Explain)" presentation="$(presentation.IZ_Policy_AllowDynsrcPlayback_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname120A" valueName="120A" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_AllowScriptlets_1" class="Both" displayName="$(string.IZ_Policy_AllowScriptlets)" explainText="$(string.IZ_Policy_AllowScriptlets_Explain)" presentation="$(presentation.IZ_Policy_AllowScriptlets_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname1209" valueName="1209" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_FirstRunOptIn_1" class="Both" displayName="$(string.IZ_Policy_FirstRunOptIn)" explainText="$(string.IZ_Policy_FirstRunOptIn_ExplainDefaultDisable)" presentation="$(presentation.IZ_Policy_FirstRunOptIn_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname1208" valueName="1208" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_LocalPathForUpload_1" class="Both" displayName="$(string.IZ_Policy_LocalPathForUpload)" explainText="$(string.IZ_Policy_LocalPathForUpload_Explain)" presentation="$(presentation.IZ_Policy_LocalPathForUpload_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname160A" valueName="160A" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_Phishing_1" class="Both" displayName="$(string.IZ_Policy_Phishing)" explainText="$(string.IZ_Policy_Phishing_Explain)" presentation="$(presentation.IZ_Policy_Phishing)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname2301" valueName="2301" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_ScriptPrompt_1" class="Both" displayName="$(string.IZ_Policy_ScriptPrompt)" explainText="$(string.IZ_Policy_ScriptPrompt_Explain)" presentation="$(presentation.IZ_Policy_ScriptPrompt_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname2105" valueName="2105" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_ScriptStatusBar_1" class="Both" displayName="$(string.IZ_Policy_ScriptStatusBar)" explainText="$(string.IZ_Policy_ScriptStatusBar_ExplainDefaultDisable)" presentation="$(presentation.IZ_Policy_ScriptStatusBar_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname2103" valueName="2103" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_TurnOnProtectedMode_1" class="Both" displayName="$(string.IZ_Policy_TurnOnProtectedMode)" explainText="$(string.IZ_Policy_TurnOnProtectedMode_Explain)" presentation="$(presentation.IZ_Policy_TurnOnProtectedMode_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7VISTA" />
+      <elements>
+        <enum id="IZ_Partname2500" valueName="2500" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_UnsafeFiles_1" class="Both" displayName="$(string.IZ_Policy_UnsafeFiles)" explainText="$(string.IZ_Policy_UnsafeFiles_Explain)" presentation="$(presentation.IZ_Policy_UnsafeFiles_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname1806" valueName="1806" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_WebBrowserApps_1" class="Both" displayName="$(string.IZ_Policy_WebBrowserApps)" explainText="$(string.IZ_Policy_WebBrowserApps_Explain)" presentation="$(presentation.IZ_Policy_WebBrowserApps)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname2400" valueName="2400" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_WebBrowserControl_1" class="Both" displayName="$(string.IZ_Policy_WebBrowserControl)" explainText="$(string.IZ_Policy_WebBrowserControl_Explain)" presentation="$(presentation.IZ_Policy_WebBrowserControl_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname1206" valueName="1206" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_WinFXRuntimeComponent_1" class="Both" displayName="$(string.IZ_Policy_WinFXRuntimeComponent)" explainText="$(string.IZ_Policy_WinFXRuntimeComponent_Explain)" presentation="$(presentation.IZ_Policy_WinFXRuntimeComponent)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname2600" valueName="2600" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_XAML_1" class="Both" displayName="$(string.IZ_Policy_XAML)" explainText="$(string.IZ_Policy_XAML_Explain)" presentation="$(presentation.IZ_Policy_XAML)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname2402" valueName="2402" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_Policy_XPS_1" class="Both" displayName="$(string.IZ_Policy_XPS)" explainText="$(string.IZ_Policy_XPS_Explain)" presentation="$(presentation.IZ_Policy_XPS)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <enum id="IZ_Partname2401" valueName="2401" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyAccessDataSourcesAcrossDomains_1" class="Both" displayName="$(string.IZ_PolicyAccessDataSourcesAcrossDomains)" explainText="$(string.IZ_PolicyAccessDataSourcesAcrossDomains_ExplainDefaultDisable)" presentation="$(presentation.IZ_PolicyAccessDataSourcesAcrossDomains_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE6SP2" />
+      <elements>
+        <enum id="IZ_Partname1406" valueName="1406" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyActiveScripting_1" class="Both" displayName="$(string.IZ_PolicyActiveScripting)" explainText="$(string.IZ_PolicyActiveScripting_ExplainDefaultEnable)" presentation="$(presentation.IZ_PolicyActiveScripting_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE6SP2" />
+      <elements>
+        <enum id="IZ_Partname1400" valueName="1400" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_LocalMachine" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0">
+      <parentCategory ref="IZ_LocalMachineZone" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_Intranet" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1">
+      <parentCategory ref="IZ_IntranetZone" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_Trusted" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2">
+      <parentCategory ref="IZ_TrustedSitesZone" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_Internet" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOff)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_Restricted" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOff)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\4">
+      <parentCategory ref="IZ_RestrictedSitesZone" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_LocalMachineLockdown" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\0">
+      <parentCategory ref="IZ_LocalMachineZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_IntranetLockdown" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\1">
+      <parentCategory ref="IZ_IntranetZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_TrustedLockdown" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\2">
+      <parentCategory ref="IZ_TrustedSitesZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_InternetLockdown" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOff)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3">
+      <parentCategory ref="IZ_InternetZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_Both_RestrictedLockdown" class="Both" displayName="$(string.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" explainText="$(string.IZ_EXPLAIN_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt)" presentation="$(presentation.IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOff)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\4">
+      <parentCategory ref="IZ_RestrictedSitesZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <enum id="IZ_Partname120b" valueName="120b" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyAllowTDCControl_Both_LocalMachine" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0">
+      <parentCategory ref="IZ_LocalMachineZone" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
+      <elements>
+        <enum id="IZ_Partname120c" valueName="120c" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyAllowTDCControl_Both_Intranet" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDC

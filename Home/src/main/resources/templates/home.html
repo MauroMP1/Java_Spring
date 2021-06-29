@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+ <!-- Bootstrap core CSS -->
+    <link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{bootstrap/css/jumbotron.css}" rel="stylesheet">
+    <link th:href="@{bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+</head>
+<body>
+<div>
+<h1 >Encender Luz Living</h1>
+<a th:href="@{/livingon}"  class="btn btn-primary">ON</a>
+<a th:href="@{/livingoff}"  class="btn btn-primary">OFF</a>
+<h2><span th:if="${livingon==1}" class="badge bg-success" >ON</span> <!-- Traer variable con imagen para mostrar estado -->
+    <span th:unless="${livingon==1}"  class="badge bg-danger" >ON</span>
+</h2>
+<h2><span th:if="${livingoff==1}" class="badge bg-success" >OFF</span> <!-- Traer variable con imagen para mostrar estado -->
+    <span th:unless="${livingoff==1}"  class="badge bg-danger" >OFF</span>
+</h2>
+</div>
+<div>
+<h1 >Encender Luz Cobacha</h1>
+<a th:href="@{/cobachaon}"  class="btn btn-primary">ON</a>
+<a th:href="@{/cobachaoff}"  class="btn btn-primary">OFF</a>
+<h2><span th:if="${cobachaon==1}" class="badge bg-success" >ON</span>
+    <span th:unless="${cobachaon==1}"  class="badge bg-danger" >ON</span>
+</h2>
+<h2><span th:if="${cobachaoff==1}" class="badge bg-success" >OFF</span>
+    <span th:unless="${cobachaoff==1}"  class="badge bg-danger" >OFF</span>
+</h2>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script th:src="@{bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

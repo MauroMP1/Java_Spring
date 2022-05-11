@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Spring Tools\workspace-spring-tool\registro"/>
 			<item value="C:\Users\mauro\workspace-spring-tool\agenda"/>
 		</list>
 		<list key="projectNameTemplate">

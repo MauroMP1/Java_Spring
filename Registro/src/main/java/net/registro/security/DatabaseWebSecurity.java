@@ -14,6 +14,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
+	
+	private String admin = "Administrador";
+	private String sup = "Supervisor";
+	private String oper = "Operador";
 
 	@Autowired
 	private DataSource dataSource;
@@ -22,10 +26,10 @@ public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 		auth.jdbcAuthentication().dataSource(dataSource)
-		.usersByUsernameQuery("select username, password, estatus from Usuarios where username=?")
-		.authoritiesByUsernameQuery("select u.username, p.perfil from UsuarioPerfil up " + 
-			"inner join Usuarios u on u.id = up.idUsuario " + 
-			"inner join Perfiles p on p.id = up.idPerfil " + 
+		.usersByUsernameQuery("select username, password, estatus from usuarios where username=?")
+		.authoritiesByUsernameQuery("select u.username, p.perfil from usuarioperfil up " + 
+			"inner join usuarios u on u.id = up.idUsuario " + 
+			"inner join perfiles p on p.id = up.idPerfil " + 
 			"where u.username = ?");
 	}
 
@@ -56,10 +60,10 @@ public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
         .antMatchers("/solicitudes/create/**",
         			 "/solicitudes/save/**").hasAuthority("USUARIO")
         
-        .antMatchers("/solicitudes/**").hasAnyAuthority("SUPERVISOR","ADMINISTRADOR")
-        .antMatchers("/vacantes/**").hasAnyAuthority("SUPERVISOR","ADMINISTRADOR")
-        .antMatchers("/categorias/**").hasAnyAuthority("SUPERVISOR","ADMINISTRADOR")
-        .antMatchers("/usuarios/**").hasAnyAuthority("ADMINISTRADOR")
+        .antMatchers("/solicitudes/**").hasAnyAuthority(sup,admin)
+        .antMatchers("/vacantes/**").hasAnyAuthority(sup,admin)
+        .antMatchers("/categorias/**").hasAnyAuthority(sup,admin)
+        .antMatchers("/usuarios/**").hasAnyAuthority(admin)
         
         // Todas las demás URLs de la Aplicación requieren autenticación
         .anyRequest().authenticated()

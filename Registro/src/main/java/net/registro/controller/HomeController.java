@@ -86,7 +86,7 @@ public class HomeController {
 		 */
 		serviceUsuarios.guardar(usuario);
 				
-		attributes.addFlashAttribute("msg", "Has sido registrado. Â¡Ahora puedes ingresar al sistema!");
+		attributes.addFlashAttribute("msg", "Has sido registrado. Ahora puedes ingresar al sistema!");
 		
 		return "redirect:/login";
 	}

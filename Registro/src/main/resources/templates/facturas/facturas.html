@@ -19,55 +19,74 @@
   <body>
 
     <header th:insert="fragments/menu :: menu-principal"></header>
-
+    
     <main role="main">     
       <hr>
       <div class="container"> 
 
         <div class="card">
-          <h4 class="card-header"><strong>Listado de Usuarios</strong></h4>              
+          <h4 class="card-header"><strong>Listado de Facturas</strong></h4>              
           <div class="card-body">            
             <hr>
             <div th:if="${msg != null}" class='alert alert-success' th:text="${msg}" role='alert'></div>
             <table class="table table-hover">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Username</th>                  
-                  <th scope="col">Email</th>
-                  <th scope="col">Estatus</th>
+                  <th scope="col">Número Factura</th>
+                  <th scope="col">Fecha de Ingreso</th>                  
+                  <th scope="col">Fecha de Vencimiento</th>
+                  <th scope="col">Importe</th>
                   <th scope="col">Operaciones</th>
                 </tr>
               </thead>
               <tbody>
-                <tr th:each="usuario : ${usuarios}">
-                  <td th:text="${usuario.nombre}">Iván Eliseo Tinajero Díaz</td>
-                  <td th:text="${usuario.username}">itinajero</td>                  
-                  <td th:text="${usuario.email}">ivanetinajero@gmail.com</td>
-                  <td th:text="${usuario.estatus == 1 ? 'Activo' : 'Bloqueado' }">Activo</td>
+                <tr th:each="factura : ${facturas}">
+                  <td th:text="${factura.numFact}"></td>
+                  <td th:text="${factura.dateI}"></td>                  
+                  <td th:text="${factura.dateV}" id="dateV"></td>
+                  <td th:text="${factura.importe}"></td>
+                  <!-- <td th:text="${usuario.estatus == 1 ? 'Activo' : 'Bloqueado' }"></td>-->
                   
                   <td>
-                    <a th:href="@{/usuarios/delete/{id} (id=${usuario.id}) }" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
-                    
-                    <span th:switch="${usuario.estatus}"> 
+                  	<a th:href="@{/facturas/edit/{id} (id=${factura.idFactura}) }" class="btn btn-success btn-sm" role="button" title="Editar"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a th:href="@{/facturas/delete/{id} (id=${factura.idFactura}) }" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                    <a th:href="@{/facturas/busqueda/{id} (id=${factura.idFactura}) }" class="btn btn-success btn-sm" role="button" title="Buscar vencimientos con esta fecha"><i class="fas fa-calendar-alt" aria-hidden="true"></i></a>
+                    <!-- <span th:switch="${usuario.estatus}"> 
                     
                       <a th:case="'1'" th:href="@{/usuarios/lock/{id} (id=${usuario.id}) }" onclick="return confirm('¿Quiere bloquear el acceso al usuario?')" class="btn btn-success btn-sm" role="button" title="Bloquear el acceso al sistema para este usuario."><i class="fas fa-lock" aria-hidden="true"></i></a>	
 					  <a th:case="'0'" th:href="@{/usuarios/unlock/{id} (id=${usuario.id}) }" onclick="return confirm('¿Desea desbloquear el usuario?')" class="btn btn-success btn-sm" role="button" title="Permitir el acceso al sistema a este usuario."><i class="fas fa-unlock" aria-hidden="true"></i></a>
 					   
-					</span>
+					</span> -->
                     
-                  </td>
+                  </td> 
                 </tr>                
                                
               </tbody>
             </table>
-            
+             <nav th:if="${facturas.totalPages > 0}" aria-label="Page navigation example" >
+			  <ul class="pagination">         
+			    <li class="page-item"><a th:href="@{/facturas/indexPaginate(page=${facturas.number - 1})}" class="page-link">Anterior</a></li>			    
+			    <li class="page-item"><a th:href="@{/facturas/indexPaginate(page=${facturas.number + 1})}" class="page-link">Siguiente</a></li>
+			  </ul>
+			</nav>
+            <hr>
+            <div align="right">
+            <!--<a class="btn btn-primary" th:href="@{/facturas/vencimientos}">Vencimientos</a> -->
+            <a class="btn btn-primary" th:href="@{/facturas/ingfacturas}">Ingresar Factura</a>
+            </div>
           </div>
         </div>
       </div> <!-- /container -->
 
     </main>
-
+    
+    
+    
+    
+    
+    
+    
+    
     <footer th:insert="fragments/footer :: pie-pagina" class="footer"></footer>
 
     <!-- Bootstrap core JavaScript
@@ -75,5 +94,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>     
-  </body>
+  
+
+</body>
 </html>

@@ -76,7 +76,7 @@ public class CategoriasController {
 			System.out.println("Existieron errores");
 			return "categorias/formCategoria";
 		}	
-				
+		System.out.println(categoria.getId());
 		// Guadamos el objeto categoria en la bd
 		serviceCategorias.guardar(categoria);
 		attributes.addFlashAttribute("msg", "Los datos de la categoría fueron guardados!");

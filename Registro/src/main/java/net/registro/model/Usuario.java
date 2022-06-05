@@ -18,7 +18,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Usuarios")
+@Table(name = "usuarios")
 public class Usuario {
 
 	@Id
@@ -34,7 +34,7 @@ public class Usuario {
 	// Relacion ManyToMany (Un usuario tiene muchos perfiles)
 	// Por defecto Fetch es FetchType.LAZY
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "UsuarioPerfil", // tabla intermedia
+	@JoinTable(name = "usuarioperfil", // tabla intermedia
 			joinColumns = @JoinColumn(name = "idUsuario"), // foreignKey en la tabla de UsuarioPerfil
 			inverseJoinColumns = @JoinColumn(name = "idPerfil") // foreignKey en la tabla de UsuarioPerfil
 	)

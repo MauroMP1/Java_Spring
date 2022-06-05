@@ -1,5 +1,5 @@
 <nav th:fragment="menu-principal" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" th:href="@{/}">Ingreso</a>
+  <a class="navbar-brand" th:href="@{/}">Facturas</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,6 +17,9 @@
 	   </li>
 	   <li class="nav-item" sec:authorize="hasAnyAuthority('ADMINISTRADOR')">
 	      <a class="nav-link" th:href="@{/usuarios/index}" >Usuarios</a>
+	   </li>
+	   <li class="nav-item" sec:authorize="hasAnyAuthority('Administrador', 'OPERADOR')">
+	      <a class="nav-link" th:href="@{/usuarios/index}" >Facturas</a>
 	   </li>
 	   <li class="nav-item">
         <a class="nav-link" th:href="@{/about}">Acerca</a>
